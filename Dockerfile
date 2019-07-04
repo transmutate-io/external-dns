@@ -1,7 +1,7 @@
 # builder image
-FROM golang:1.12.5-alpine3.9 as builder
+FROM golang:1.12.6-alpine3.10 as builder
 
-ENV VERSION "v0.5.13"
+ENV VERSION "v0.5.15"
 
 RUN mkdir -p /src/external-dns && \
    cd /src/external-dns && \
@@ -11,7 +11,7 @@ RUN mkdir -p /src/external-dns && \
    make
 
 # final image
-FROM alpine:3.9.2
+FROM alpine:3.10.0
 
 RUN apk add ca-certificates
 
