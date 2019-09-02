@@ -1,7 +1,7 @@
 # builder image
-FROM golang:1.12.6-alpine3.10 as builder
+FROM golang:1.12.9-alpine3.10 as builder
 
-ENV VERSION "v0.5.15"
+ENV VERSION "v0.5.16"
 
 RUN mkdir -p /src/external-dns && \
    cd /src/external-dns && \
